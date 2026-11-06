@@ -1,0 +1,69 @@
+<resources>
+    <string name="app_name">BYD</string>
+
+    <string name="tab_exercise">Ćwiczenie</string>
+    <string name="tab_music">Muzyka</string>
+    <string name="tab_plan">Plan tygodniowy</string>
+    <string name="tab_history">Historia logów</string>
+
+    <string name="action_cancel">Anuluj</string>
+    <string name="action_share">Udostępnij</string>
+    <string name="action_ok">OK</string>
+
+    <string-array name="weekday_short">
+        <item>Pn</item>
+        <item>Wt</item>
+        <item>Śr</item>
+        <item>Cz</item>
+        <item>Pt</item>
+        <item>So</item>
+        <item>Nd</item>
+    </string-array>
+
+    <string name="history_title">Historia logów</string>
+    <string name="history_import">Importuj</string>
+    <string name="history_share">Udostępnij</string>
+    <string name="history_today">Dziś</string>
+    <string name="history_previous_month">Poprzedni miesiąc</string>
+    <string name="history_next_month">Następny miesiąc</string>
+    <string name="history_empty_day">Brak zapisanego treningu w tym dniu.</string>
+
+    <plurals name="exercises">
+        <item quantity="one">%d ćwiczenie</item>
+        <item quantity="few">%d ćwiczenia</item>
+        <item quantity="many">%d ćwiczeń</item>
+        <item quantity="other">%d ćwiczenia</item>
+    </plurals>
+    <plurals name="training_days">
+        <item quantity="one">%d dzień treningowy</item>
+        <item quantity="few">%d dni treningowe</item>
+        <item quantity="many">%d dni treningowych</item>
+        <item quantity="other">%d dnia treningowego</item>
+    </plurals>
+
+    <string name="share_title">Udostępnij logi</string>
+    <string name="share_subtitle">Wybierz dni do eksportu.</string>
+    <string name="share_preset_week">Ten tydzień</string>
+    <string name="share_preset_month">Ten miesiąc</string>
+    <string name="share_preset_30">Ostatnie 30 dni</string>
+    <string name="share_preset_all">Cały okres</string>
+    <string name="share_from">Od</string>
+    <string name="share_to">Do</string>
+    <string name="share_summary_invalid">Wybierz datę początkową przed końcową.</string>
+    <string name="share_summary_empty">Brak treningów w tym zakresie.</string>
+    <string name="share_summary_counts">%1$s · %2$s</string>
+    <string name="share_subject">Logi treningowe BYD</string>
+    <string name="action_save_to_file">Zapisz do pliku</string>
+    <string name="save_done">Zapisano logi</string>
+    <string name="save_failed">Nie udało się zapisać pliku.</string>
+
+    <string name="import_not_byd">Ten plik nie jest eksportem logów BYD.</string>
+    <string name="import_read_failed">Nie udało się odczytać pliku.</string>
+    <string name="import_nothing_new">Brak nowych danych do importu</string>
+    <plurals name="import_done">
+        <item quantity="one">Zaimportowano %d dzień treningowy</item>
+        <item quantity="few">Zaimportowano %d dni treningowe</item>
+        <item quantity="many">Zaimportowano %d dni treningowych</item>
+        <item quantity="other">Zaimportowano %d dnia treningowego</item>
+    </plurals>
+</resources>

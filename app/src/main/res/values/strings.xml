@@ -1,0 +1,63 @@
+<resources>
+    <string name="app_name">BYD</string>
+
+    <string name="tab_exercise">Exercise</string>
+    <string name="tab_music">Music</string>
+    <string name="tab_plan">Weekly plan</string>
+    <string name="tab_history">Logs history</string>
+
+    <string name="action_cancel">Cancel</string>
+    <string name="action_share">Share</string>
+    <string name="action_ok">OK</string>
+
+    <string-array name="weekday_short">
+        <item>Mo</item>
+        <item>Tu</item>
+        <item>We</item>
+        <item>Th</item>
+        <item>Fr</item>
+        <item>Sa</item>
+        <item>Su</item>
+    </string-array>
+
+    <string name="history_title">Logs history</string>
+    <string name="history_import">Import</string>
+    <string name="history_share">Share</string>
+    <string name="history_today">Today</string>
+    <string name="history_previous_month">Previous month</string>
+    <string name="history_next_month">Next month</string>
+    <string name="history_empty_day">No training logged on this day.</string>
+
+    <plurals name="exercises">
+        <item quantity="one">%d exercise</item>
+        <item quantity="other">%d exercises</item>
+    </plurals>
+    <plurals name="training_days">
+        <item quantity="one">%d training day</item>
+        <item quantity="other">%d training days</item>
+    </plurals>
+
+    <string name="share_title">Share logs</string>
+    <string name="share_subtitle">Choose which days to export.</string>
+    <string name="share_preset_week">This week</string>
+    <string name="share_preset_month">This month</string>
+    <string name="share_preset_30">Last 30 days</string>
+    <string name="share_preset_all">All time</string>
+    <string name="share_from">From</string>
+    <string name="share_to">To</string>
+    <string name="share_summary_invalid">Pick a start date before the end date.</string>
+    <string name="share_summary_empty">No training logged in this range.</string>
+    <string name="share_summary_counts">%1$s · %2$s</string>
+    <string name="share_subject">BYD training logs</string>
+    <string name="action_save_to_file">Save to file</string>
+    <string name="save_done">Logs saved</string>
+    <string name="save_failed">Couldn\'t save the file.</string>
+
+    <string name="import_not_byd">This file isn\'t a BYD log export.</string>
+    <string name="import_read_failed">Couldn\'t read that file.</string>
+    <string name="import_nothing_new">Nothing new to import</string>
+    <plurals name="import_done">
+        <item quantity="one">Imported %d training day</item>
+        <item quantity="other">Imported %d training days</item>
+    </plurals>
+</resources>
