@@ -10,6 +10,7 @@ import com.byd.workout.data.PlanRepository
 import com.byd.workout.data.Seed
 import com.byd.workout.data.SessionRepository
 import com.byd.workout.data.db.BydDatabase
+import com.byd.workout.timer.TimerController
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -26,6 +27,7 @@ class AppContainer(context: Context) {
     val planRepository = PlanRepository(database.planDao())
     val logRepository = LogRepository(database.logDao())
     val sessionRepository = SessionRepository(settingsDataStore)
+    val timerController = TimerController(appContext, settingsDataStore, applicationScope)
 }
 
 class BydApp : Application() {
