@@ -67,4 +67,9 @@
     <string name="timer_done">Time\'s up</string>
     <string name="channel_timer">Rest timer</string>
     <string name="channel_timer_done">Time\'s up</string>
+
+    <string name="timer_tap_to_start">TAP TO START</string>
+    <string name="timer_tap_to_pause">TAP TO PAUSE</string>
+    <string name="timer_paused">PAUSED</string>
+    <string name="timer_times_up">TIME\'S UP</string>
 </resources>

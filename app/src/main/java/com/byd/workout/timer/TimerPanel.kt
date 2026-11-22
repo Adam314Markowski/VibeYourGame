@@ -35,10 +35,12 @@ import androidx.compose.ui.geometry.Size
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.byd.workout.BydApp
+import com.byd.workout.R
 import com.byd.workout.ui.theme.BydShapes
 import com.byd.workout.ui.theme.BydTheme
 import com.byd.workout.ui.theme.BydType
@@ -158,10 +160,10 @@ fun TimerPanel(modifier: Modifier = Modifier) {
                 )
                 Text(
                     text = when {
-                        remaining <= 0.0 -> "TIME'S UP"
-                        timerState.running -> "TAP TO PAUSE"
-                        remaining >= timerState.totalSec -> "TAP TO START"
-                        else -> "PAUSED"
+                        remaining <= 0.0 -> stringResource(R.string.timer_times_up)
+                        timerState.running -> stringResource(R.string.timer_tap_to_pause)
+                        remaining >= timerState.totalSec -> stringResource(R.string.timer_tap_to_start)
+                        else -> stringResource(R.string.timer_paused)
                     },
                     style = BydType.tiny,
                     color = BydTheme.colors.muted,

@@ -73,4 +73,9 @@
     <string name="timer_done">Czas minął</string>
     <string name="channel_timer">Czas na przerwę</string>
     <string name="channel_timer_done">Czas minął</string>
+
+    <string name="timer_tap_to_start">DOTKNIJ, ABY ZACZĄĆ   </string>
+    <string name="timer_tap_to_pause">DOTKNIJ, ABY WSTRZYMAĆ</string>
+    <string name="timer_paused">WSTRZYMANO</string>
+    <string name="timer_times_up">CZAS MINĄŁ</string>
 </resources>
