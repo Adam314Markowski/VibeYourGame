@@ -6,6 +6,7 @@ import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import com.byd.workout.data.LogRepository
+import com.byd.workout.data.MediaRepository
 import com.byd.workout.data.PlanRepository
 import com.byd.workout.data.Seed
 import com.byd.workout.data.SessionRepository
@@ -27,6 +28,7 @@ class AppContainer(context: Context) {
     val planRepository = PlanRepository(database.planDao())
     val logRepository = LogRepository(database.logDao())
     val sessionRepository = SessionRepository(settingsDataStore)
+    val mediaRepository = MediaRepository(database.mediaDao(), appContext)
     val timerController = TimerController(appContext, settingsDataStore, applicationScope)
 }
 

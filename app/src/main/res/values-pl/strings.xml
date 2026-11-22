@@ -78,4 +78,14 @@
     <string name="timer_tap_to_pause">DOTKNIJ, ABY WSTRZYMAĆ</string>
     <string name="timer_paused">WSTRZYMANO</string>
     <string name="timer_times_up">CZAS MINĄŁ</string>
+
+    <string name="music_title">Muzyka i wideo</string>
+    <string name="music_subtitle">Odtwarzane w tle podczas treningu. Pliki zostają na tym urządzeniu.</string>
+    <string name="music_add">Dodaj audio lub wideo z urządzenia</string>
+    <string name="music_empty">Brak muzyki lub wideo.</string>
+    <string name="music_from_device">Z urządzenia</string>
+    <string name="music_badge_audio">AUDIO</string>
+    <string name="music_badge_video">WIDEO</string>
+    <string name="music_remove_confirm">Usunąć utwór?</string>
+    <string name="music_remove">Usuń</string>
 </resources>
