@@ -2,6 +2,7 @@ package com.byd.workout.timer
 
 import android.content.Context
 import android.os.SystemClock
+import com.byd.workout.timer.TimerService
 import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.core.booleanPreferencesKey
@@ -73,14 +74,17 @@ class TimerController(
 
     fun start() {
         updateState { it.start(SystemClock.elapsedRealtime()) }
+        TimerService.start(context)
     }
 
     fun pause() {
         updateState { it.pause(SystemClock.elapsedRealtime()) }
+        TimerService.stop(context)
     }
 
     fun reset() {
         updateState { it.reset() }
+        TimerService.stop(context)
     }
 
     fun adjust(deltaSec: Int) {

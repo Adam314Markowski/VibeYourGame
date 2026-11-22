@@ -60,4 +60,11 @@
         <item quantity="one">Imported %d training day</item>
         <item quantity="other">Imported %d training days</item>
     </plurals>
+
+    <string name="timer_running">Rest timer</string>
+    <string name="timer_pause">Pause</string>
+    <string name="timer_reset">Reset</string>
+    <string name="timer_done">Time\'s up</string>
+    <string name="channel_timer">Rest timer</string>
+    <string name="channel_timer_done">Time\'s up</string>
 </resources>

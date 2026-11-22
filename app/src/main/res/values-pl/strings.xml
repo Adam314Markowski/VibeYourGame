@@ -66,4 +66,11 @@
         <item quantity="many">Zaimportowano %d dni treningowych</item>
         <item quantity="other">Zaimportowano %d dnia treningowego</item>
     </plurals>
+
+    <string name="timer_running">Czas na przerwę</string>
+    <string name="timer_pause">Wstrzymaj</string>
+    <string name="timer_reset">Zresetuj</string>
+    <string name="timer_done">Czas minął</string>
+    <string name="channel_timer">Czas na przerwę</string>
+    <string name="channel_timer_done">Czas minął</string>
 </resources>
