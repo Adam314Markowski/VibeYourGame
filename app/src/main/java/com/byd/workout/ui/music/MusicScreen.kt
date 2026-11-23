@@ -24,6 +24,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.outlined.Movie
 import androidx.compose.material.icons.outlined.MusicNote
+import androidx.compose.material.icons.outlined.Pause
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
@@ -39,7 +40,9 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.media3.ui.PlayerView
 import com.byd.workout.R
 import com.byd.workout.data.db.MediaItemEntity
 import com.byd.workout.ui.bydViewModel
@@ -55,10 +58,13 @@ import com.byd.workout.util.formatTimer
 @Composable
 fun MusicScreen() {
     val viewModel: MusicViewModel = bydViewModel { c ->
-        MusicViewModel(c.mediaRepository)
+        MusicViewModel(c.mediaRepository, c.appContext)
     }
 
     val items by viewModel.items.collectAsStateWithLifecycle()
+    val currentMediaId by viewModel.currentMediaId.collectAsStateWithLifecycle()
+    val isPlaying by viewModel.isPlaying.collectAsStateWithLifecycle()
+    val controller by viewModel.controllerState.collectAsStateWithLifecycle()
 
     var itemToRemove by remember { mutableStateOf<MediaItemEntity?>(null) }
 
@@ -137,6 +143,29 @@ fun MusicScreen() {
         }
 
         Spacer(Modifier.height(12.dp))
+        
+        val loadedItem = items.find { it.id.toString() == currentMediaId }
+        if (loadedItem?.type == "video" && controller != null) {
+            AndroidView(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(200.dp)
+                    .clip(RoundedCornerShape(12.dp))
+                    .background(androidx.compose.ui.graphics.Color.Black),
+                factory = { ctx ->
+                    PlayerView(ctx).apply {
+                        useController = true
+                        player = controller
+                    }
+                },
+                update = { view ->
+                    if (view.player != controller) {
+                        view.player = controller
+                    }
+                }
+            )
+            Spacer(Modifier.height(12.dp))
+        }
 
         if (items.isEmpty()) {
             EmptyText(stringResource(R.string.music_empty))
@@ -146,10 +175,12 @@ fun MusicScreen() {
                 verticalArrangement = Arrangement.spacedBy(6.dp)
             ) {
                 items(items, key = { it.id }) { item ->
+                    val isLoaded = item.id.toString() == currentMediaId
                     MusicItemRow(
                         item = item,
-                        isLoaded = false, // Will be updated in step 6
-                        onClick = { /* Will be handled in step 6 */ },
+                        isLoaded = isLoaded,
+                        isPlaying = isLoaded && isPlaying,
+                        onClick = { viewModel.playTrack(item) },
                         onLongClick = { itemToRemove = item }
                     )
                 }
@@ -163,6 +194,7 @@ fun MusicScreen() {
 private fun MusicItemRow(
     item: MediaItemEntity,
     isLoaded: Boolean,
+    isPlaying: Boolean,
     onClick: () -> Unit,
     onLongClick: () -> Unit
 ) {
@@ -192,7 +224,7 @@ private fun MusicItemRow(
                 contentAlignment = Alignment.Center
             ) {
                 Icon(
-                    imageVector = if (item.type == "video") Icons.Outlined.Movie else Icons.Outlined.MusicNote,
+                    imageVector = if (isPlaying) Icons.Outlined.Pause else if (item.type == "video") Icons.Outlined.Movie else Icons.Outlined.MusicNote,
                     contentDescription = null,
                     tint = if (isLoaded) colors.onAccent else colors.muted,
                     modifier = Modifier.size(16.dp)
