@@ -44,6 +44,7 @@ import com.byd.workout.ui.components.BydSnackbar
 import com.byd.workout.ui.components.LocalBydSnackbar
 import com.byd.workout.ui.exercise.ExerciseScreen
 import com.byd.workout.ui.history.HistoryScreen
+import com.byd.workout.ui.music.MiniPlayer
 import com.byd.workout.ui.music.MusicScreen
 import com.byd.workout.ui.plan.PlanEditScreen
 import com.byd.workout.ui.plan.PlanScreen
@@ -72,7 +73,7 @@ private enum class TopLevel(val route: String, @StringRes val label: Int, val ic
 @Composable
 fun BydNavHost(
     navController: NavHostController = rememberNavController(),
-    miniPlayer: @Composable () -> Unit = {},
+    miniPlayer: @Composable () -> Unit = { MiniPlayer() },
 ) {
     val colors = BydTheme.colors
     val snackbarHostState = remember { SnackbarHostState() }
