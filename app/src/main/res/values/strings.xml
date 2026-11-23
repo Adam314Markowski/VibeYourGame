@@ -60,4 +60,26 @@
         <item quantity="one">Imported %d training day</item>
         <item quantity="other">Imported %d training days</item>
     </plurals>
+
+    <string name="timer_running">Rest timer</string>
+    <string name="timer_pause">Pause</string>
+    <string name="timer_reset">Reset</string>
+    <string name="timer_done">Time\'s up</string>
+    <string name="channel_timer">Rest timer</string>
+    <string name="channel_timer_done">Time\'s up</string>
+
+    <string name="timer_tap_to_start">TAP TO START</string>
+    <string name="timer_tap_to_pause">TAP TO PAUSE</string>
+    <string name="timer_paused">PAUSED</string>
+    <string name="timer_times_up">TIME\'S UP</string>
+
+    <string name="music_title">Music &amp; video</string>
+    <string name="music_subtitle">Plays in the background while you train. Files stay on this device.</string>
+    <string name="music_add">Add audio or video from device</string>
+    <string name="music_empty">No music or videos yet.</string>
+    <string name="music_from_device">From device</string>
+    <string name="music_badge_audio">AUDIO</string>
+    <string name="music_badge_video">VIDEO</string>
+    <string name="music_remove_confirm">Remove track?</string>
+    <string name="music_remove">Remove</string>
 </resources>
